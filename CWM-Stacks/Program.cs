@@ -26,17 +26,36 @@ namespace CWM_Stacks
                 Console.WriteLine(x);
             Console.WriteLine();
 
-            Console.WriteLine("The whole stack (getting the item fromthe top):");
+            Console.WriteLine("The whole stack (getting the item from the top):");
             while (MyIntStack.Count != 0)
             {
                 Console.WriteLine(MyIntStack.Pop());
             }            
         }
 
+        public static void Converter1(int x)
+        {
+            Stack<int> st = new Stack<int>();
+            while (x != 0)
+            {
+                st.Push(x % 2);
+                x /= 2;
+            }
+
+            while(st.Count != 0)
+            {
+                Console.Write(st.Pop());
+            }
+
+            Console.WriteLine();
+        }
         static void Main(string[] args)
         {
             //Simple stack demo:
             IntStackDemo();
+            Console.ReadKey();
+
+            Converter1(29);
             Console.ReadKey();
 
             //Reversing a string - base for of UnDo and Back/Forward:
